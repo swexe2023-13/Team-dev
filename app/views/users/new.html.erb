@@ -1,0 +1,13 @@
+<h1>新規ユーザー作成</h1>
+<%= form_with model: @user, local: true do |f| %>
+  <%= f.label :uid %>
+  <%= f.text_field :uid %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  
+
+  
+
+  <%= f.submit '作成' %>
+<% end %>

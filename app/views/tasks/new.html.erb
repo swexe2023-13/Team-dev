@@ -1,0 +1,11 @@
+<%= form_for @task , url: {action: :create} do |f| %>
+    <%= f.label :title, 'Title' %>
+    <%= f.text_field :title %>
+    <%= f.label :todo, 'Todo' %>
+    <%= f.text_field :todo %>
+    <%= f.label :date, 'Expire' %>
+    <%= f.text_field :date %>
+    <%= f.label :memo, 'Memo' %>
+    <%= f.text_field :memo %>
+    <%= f.submit '新規作成' %>
+<% end %>

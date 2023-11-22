@@ -29,9 +29,9 @@ class TasksController < ApplicationController
     end
     def update
       @task = Task.find(params[:id])
-      if @task.update(title: params[:task][:title], date: params[:task][:todo], todo: params[:task][:todo], memo: params[:task][:memo])
+      if @task.update(title: params[:task][:title], date: params[:task][:date], todo: params[:task][:todo], memo: params[:task][:memo])
         flash[:notice] = '1レコード更新しました'
-        redirect_to root_path
+        redirect_to tasks_path
       else
         render 'edit'
       end

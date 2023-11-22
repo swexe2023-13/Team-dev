@@ -1,13 +1,17 @@
-<h1>ユーザ一覧</h1>
-<%= link_to '新規ユーザー作成', new_user_path %>
+<h1>Welcome to To-Do-List</h1>
+
+<h1>Welcome to the beginning of a new adventure! Let's spend wonderful days together!</h1>
+
+
 <ul class ="example">
 <% @users.each do |user| %>
   <li>
     <%= user.uid %>
-    <%= button_to '削除', user_path(user), method: :delete, data: { confirm: '本当に削除しますか？' } %>
+    <%= button_to 'delete', user_path(user), method: :delete, data: { confirm: '本当に削除しますか？' } %>
   </li>
 <% end %>
 </ul>
 <p>
-<%= link_to 'To-Do一覧', tasks_path %>
+<%= link_to 'Sign In', tasks_path %>
+<%= link_to 'Sign Up', new_user_path %>
 </p>

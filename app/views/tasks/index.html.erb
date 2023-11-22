@@ -16,7 +16,7 @@
         <th><%= task.todo %></th>
         <th><%= task.date %></th>
         <% if current_user %>
-          <th><%= button_to '削除', task_path(task), method: :delete %></th>
+          <th><%= button_to 'delete', task_path(task), method: :delete %></th>
         <% end %>
       </tr>
       
@@ -29,9 +29,10 @@
 </ul>
 <p>
  <% if current_user %>
-    <%= link_to '新規To-Do作成', new_task_path %>
-    <%= link_to 'ログアウト', top_logout_path %>
+    <%= link_to 'Create To-Do', new_task_path %>
+    <%= link_to 'Sign Out', top_logout_path %>
   <% else %>
-    <%= link_to 'ログイン', top_main_path %>
+    <h1>Plese Sign In!!</h1>
+    <%= link_to 'Sign In', top_main_path %>
   <% end %>
   </p>

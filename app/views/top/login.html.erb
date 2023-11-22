@@ -1,7 +1,7 @@
 c<%= form_tag '/top/login', method: :post, data: { turbo: false } do %>
-    <%= label_tag :uid, 'ユーザーID' %>
+    <%= label_tag :uid, 'UID' %>
     <%= text_field_tag :uid %><br>
-    <%= label_tag :password, 'パスワード' %>
+    <%= label_tag :password, 'Pass' %>
     <%= password_field_tag :password %><br>
-    <%= submit_tag '登録' %>
+    <%= submit_tag 'Register' %>
 <% end %>

@@ -10,7 +10,7 @@ class TasksController < ApplicationController
       @task = Task.new(title: params[:task][:title], date: params[:task][:date], todo: params[:task][:todo], memo: params[:task][:memo], user_id: user.id)
       if @task.save
         flash[:notice] = '1レコード追加しました'
-        redirect_to root_path
+        redirect_to tasks_path
       else
         render :new
       end
@@ -19,7 +19,7 @@ class TasksController < ApplicationController
       tweet = Task.find(params[:id])
       tweet.destroy
       flash[:notice] = '1レコード削除しました'
-      redirect_to root_path
+      redirect_to tasks_path
     end
     def show
       @task = Task.find(params[:id])

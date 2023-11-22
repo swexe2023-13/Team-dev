@@ -2,6 +2,7 @@
     <%= flash[:notice] %>
 <% end %>
 <ul>
+  
     <table border=5>
       <tr>
         <th>task-title</th>
@@ -29,7 +30,7 @@
     <%= link_to 'Create To-Do', new_task_path %>
     <%= link_to 'Sign Out', top_logout_path %>
   <% else %>
-    <h1>Plese Sign In!!</h1>
     <%= link_to 'Sign In', top_main_path %>
   <% end %>
-</p>
+
+  </p>

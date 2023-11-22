@@ -2,21 +2,36 @@
     <%= flash[:notice] %>
 <% end %>
 <ul>
-  <% @tasks.each do |task| %>
-    <p>
-      <%= link_to task.title, task_path(task) %>
-      <%= task.todo %>
-      <%= task.date %>
-    </p>
-    <% if current_user %>
-      <%= button_to '削除', task_path(task), method: :delete %>
-    <% end %>
-  <% end %>
+  
+    <table border=5>
+      <tr>
+        <th>task-title</th>
+        <th>todo</th>
+        <th>date</th>
+      </tr>
+       <% @tasks.each do |task| %>
+      <tr>
+       
+        <th><%= link_to task.title, task_path(task) %></th>
+        <th><%= task.todo %></th>
+        <th><%= task.date %></th>
+        <% if current_user %>
+          <th><%= button_to '削除', task_path(task), method: :delete %></th>
+        <% end %>
+      </tr>
+      
     
-  <% if current_user %>
+    
+  <% end %>
+  
+ 
+  
+</ul>
+<p>
+ <% if current_user %>
     <%= link_to '新規To-Do作成', new_task_path %>
     <%= link_to 'ログアウト', top_logout_path %>
   <% else %>
     <%= link_to 'ログイン', top_main_path %>
   <% end %>
-</ul>
+  </p>

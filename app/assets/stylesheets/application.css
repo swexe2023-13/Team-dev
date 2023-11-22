@@ -16,12 +16,14 @@
 ul{
 padding: 1em 1em 1em 3em; 
 border: solid 3px ;
- text-align: center;
-    
 }
 p{
     padding: 1em 1em 1em 3em; 
     border: solid 3px ;
-     text-align: center;
+    text-align: center;
     
+}
+.example li{
+    width: 200px;
+    margin: auto;
 }

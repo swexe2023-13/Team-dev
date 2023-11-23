@@ -23,10 +23,10 @@ p{
     text-align: center;
     
 }
-.example li{
-    width: 200px;
-    margin: auto;
-}
+/*.example {*/
+/*    width: 200px;*/
+/*    margin: auto;*/
+/*}*/
 table {
     margin-left: auto;
     margin-right: auto;

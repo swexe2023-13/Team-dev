@@ -3,13 +3,18 @@
 <h1>Welcome to the beginning of a new adventure! Let's spend wonderful days together!</h1>
 
 
-<ul class ="example">
-<% @users.each do |user| %>
-  <li>
-    <%= user.uid %>
-    <%= button_to 'delete', user_path(user), method: :delete, data: { confirm: '本当に削除しますか？' } %>
-  </li>
+<ul>
+   <table border=5>
+  <% @users.each do |user| %>
+ <tr>
+  
+   
+    <th><%= user.uid %></th>
+    <th><%= button_to 'delete', user_path(user), method: :delete, data: { confirm: '本当に削除しますか？' } %></th>
+  
+  </tr>
 <% end %>
+</table>
 </ul>
 <p>
 <%= link_to 'Sign In', tasks_path %>

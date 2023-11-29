@@ -1,26 +1,28 @@
 <% if flash[:notice] %>
-    <%= flash[:notice] %>
+  <%= flash[:notice] %>
 <% end %>
 <ul>
-  
-    <table border=5>
+  <table border=5>
+    <tr>
+      <th>task-title</th>
+      <th>todo</th>
+      <th>date</th>
+    </tr>
+    <% @tasks.each do |task| %>
       <tr>
-        <th>task-title</th>
-        <th>todo</th>
-        <th>date</th>
-      </tr>
-      <% @tasks.each do |task| %>
-      <tr>
-       
         <th><%= link_to task.title, task_path(task) %></th>
         <th><%= task.todo %></th>
         <th><%= task.date %></th>
+        <%= form_with(url: update_status_task_path(task), local: true, method: :patch) do |form| %>
+          <th><%= form.select :status, ['未着手', '進行中', '完了'], selected: task.status %></th>
+          <th><%= form.submit '更新' %></th>
+        <% end %>
         <% if current_user %>
           <th><%= button_to 'delete', task_path(task), method: :delete %></th>
         <% end %>
       </tr>
-      <% end %>
-    </table>
+    <% end %>
+  </table>
 </ul>
 
 

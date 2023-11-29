@@ -21,11 +21,15 @@
     <% end %>
   </table>
 </ul>
-<p>
-<% if current_user %>
-  <%= link_to 'Create To-Do', new_task_path %>
-  <%= link_to 'Sign Out', top_logout_path %>
-<% else %>
-  <%= link_to 'Sign In', top_main_path %>
-<% end %>
-</p>
+
+
+
+<p class="solid">
+ <% if current_user %>
+    <%= link_to 'Create To-Do', new_task_path %>
+    <%= link_to 'Sign Out', top_logout_path %>
+  <% else %>
+    <%= link_to 'Sign In', top_main_path %>
+  <% end %>
+
+  </p>

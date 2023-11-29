@@ -5,7 +5,7 @@
     <%= f.text_field :todo %>
     <%= f.label :date, 'Expire', class: 'controll-label' %>
     <%= f.datetime_field :date, class: 'form-controll' %>
-    <%= f.label :memo, 'Memo' %>
-    <%= f.text_field :memo %>
+    <p class><%= f.label :memo, 'Memo' %>
+    <%= f.text_field :memo ,size:"40" %></p>
     <%= f.submit 'New To-Do' %>
 <% end %>

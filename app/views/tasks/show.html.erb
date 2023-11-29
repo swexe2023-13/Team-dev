@@ -1,12 +1,20 @@
-
+<div class="example">
+<p>
+<%= @task.todo %>
+</p>
+<p>
+<%= @task.date %>
+</p>
+</div>
 <p>
 <%= @task.title %>
-<%= @task.todo %>
-<%= @task.date %>
 <%= @task.memo %>
+</p>
+<div class="example">
+<%= link_to 'Return', :back %>
 <% if current_user %>
     <%= button_to 'delete', task_path(@task), method: :delete %>
     <%= button_to 'edit', edit_task_path(@task) %>
 <% end %>
-</p>
-<%= link_to 'Return', :back %>
+</div>
+

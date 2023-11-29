@@ -16,7 +16,7 @@
 <%= link_to 'Return', :back %>
 <% if current_user %>
     <%= button_to 'delete', task_path(@task), method: :delete %>
-    <%= button_to 'edit', edit_task_path(@task),  method: :delete %>
+    <%= link_to 'edit', edit_task_path(@task) %>
 <% end %>
 </div>
 

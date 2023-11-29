@@ -7,7 +7,7 @@ class TasksController < ApplicationController
     end
     def create
       user = User.find_by(uid: session[:login_uid])
-      @task = Task.new(title: params[:task][:title], date: params[:task][:date], todo: params[:task][:todo], memo: params[:task][:memo], user_id: user.id)
+      @task = Task.new(title: params[:task][:title], date: params[:task][:date], todo: params[:task][:todo], memo: params[:task][:memo], user_id: user.id, status: params[:task][:status])
       if @task.save
         flash[:notice] = '1レコード追加しました'
         redirect_to tasks_path
@@ -16,8 +16,8 @@ class TasksController < ApplicationController
       end
     end
     def destroy
-      tweet = Task.find(params[:id])
-      tweet.destroy
+      task = Task.find(params[:id])
+      task.destroy
       flash[:notice] = '1レコード削除しました'
       redirect_to tasks_path
     end
@@ -29,11 +29,24 @@ class TasksController < ApplicationController
     end
     def update
       @task = Task.find(params[:id])
-      if @task.update(title: params[:task][:title], date: params[:task][:date], todo: params[:task][:todo], memo: params[:task][:memo])
+      if @task.update(title: params[:task][:title], date: params[:task][:date], todo: params[:task][:todo], memo: params[:task][:memo], status: params[:task][:status])
         flash[:notice] = '1レコード更新しました'
         redirect_to tasks_path
       else
         render 'edit'
       end
     end
+    def update_status
+      @task = Task.find(params[:id])
+      if params[:task].present?
+        if @task.update(status: params[:task][:status])
+          redirect_to tasks_path, notice: 'Task status was successfully updated.'
+        end
+      else
+        flash[:alert] = 'Task status was not provided.'
+        render :edit
+      end
+end
+
+
 end

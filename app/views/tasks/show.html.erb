@@ -6,6 +6,12 @@
 <%= @task.title %>
 <%= @task.memo %>
 </p>
+<p>
+<%= form_with url: update_status_task_path(@task), local: true, method: :patch do |form| %>
+  <%= form.select :status, ['未着手', '進行中', '完了'], selected: @task.status %>
+  <%= form.submit '更新' %>
+<% end %>
+</p>
 <div class="example">
 <%= link_to 'Return', :back %>
 <% if current_user %>

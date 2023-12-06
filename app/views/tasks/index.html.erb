@@ -1,6 +1,7 @@
 <% if flash[:notice] %>
   <%= flash[:notice] %>
 <% end %>
+<<<<<<< HEAD
 
 <ul>
 
@@ -23,6 +24,23 @@
 
 <%end%>
 </ul>
+=======
+<div class="Solid">
+<%= form_for @task , url: {action: :create} do |f| %>
+    <% if current_user %>
+      <div class="inner">
+      <%= f.label :title, 'Title' %>
+      <%= f.text_field :title %>
+      <%= f.label :date, 'Expire', class: 'controll-label' %>
+      <%= f.datetime_field :date, class: 'form-controll' %>
+      <%= f.label :memo, 'Memo' %>
+      <%= f.text_field :memo ,size:"40" %></p>
+      <%= f.submit 'New To-Do' %>
+    </div>
+    <% end %>
+    </div>
+    <% end %>
+>>>>>>> 3af842f23b08d45c0b5d0db97e96dc0fc206a2ed
 <ul>
   <table border=5>
     <tr>

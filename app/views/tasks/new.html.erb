@@ -1,4 +1,5 @@
 <%= form_for @task , url: {action: :create} do |f| %>
+<div class="inner">
     <%= f.label :title, 'Title' %>
     <%= f.text_field :title %>
     <%= f.label :todo, 'Todo' %>
@@ -8,4 +9,5 @@
     <p class><%= f.label :memo, 'Memo' %>
     <%= f.text_field :memo ,size:"40" %></p>
     <%= f.submit 'New To-Do' %>
+</div>
 <% end %>

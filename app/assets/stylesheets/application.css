@@ -40,3 +40,6 @@ table {
 .inner{
   text-align: center;
 }
+.child {
+ float: left;
+}

@@ -1,13 +1,15 @@
-<h1>Sign Up</h1>
+<h1 class="inner">Sign Up</h1>
+<div class="inner">
 <%= form_with model: @user, local: true do |f| %>
-  <%= f.label :uid %>
+   <div class="example"><%= f.label :uid %>
   <%= f.text_field :uid %>
 
   <%= f.label :password %>
   <%= f.password_field :password %>
-  
+   </div>
 
   
 
   <%= f.submit 'Create' %>
 <% end %>
+</div>

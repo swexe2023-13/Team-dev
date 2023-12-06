@@ -1,7 +1,11 @@
+<h1 class="inner">Sign In</h1>
+<div class="inner">
 <%= form_tag '/top/login', method: :post, data: { turbo: false } do %>
-    <%= label_tag :uid, 'UID' %>
-    <%= text_field_tag :uid %><br>
+    <div class="example"><%= label_tag :uid, 'UID' %>
+    <%= text_field_tag :uid %>
     <%= label_tag :password, 'Pass' %>
-    <%= password_field_tag :password %><br>
+    <%= password_field_tag :password %>
+    </div>
     <%= submit_tag 'Register' %>
 <% end %>
+</div>

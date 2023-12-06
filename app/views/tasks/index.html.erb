@@ -1,34 +1,28 @@
 <% if flash[:notice] %>
   <%= flash[:notice] %>
 <% end %>
-<<<<<<< HEAD
-<div class="Solid">
-<%= form_for @task , url: {action: :create} do |f| %>
-    
-    <div class="inner">
-=======
+
+<ul>
+
+
 
 <%= form_for @task , url: {action: :create} do |f| %>
 <div class="inner">
   <% if current_user %>
->>>>>>> 3aaea247a7694c2f35edf5955d263579d848e76f
+
     <%= f.label :title, 'Title' %>
     <%= f.text_field :title %>
     <%= f.label :date, 'Expire', class: 'controll-label' %>
     <%= f.datetime_field :date, class: 'form-controll' %>
-    <p class><%= f.label :memo, 'Memo' %>
+    <p><%= f.label :memo, 'Memo' %>
     <%= f.text_field :memo ,size:"40" %></p>
     <%= f.submit 'New To-Do' %>
-<<<<<<< HEAD
-</div>
-<% end %>
-</div>
-=======
-  <% end %>
+
 </div>
 <% end %>
 
->>>>>>> 3aaea247a7694c2f35edf5955d263579d848e76f
+<%end%>
+</ul>
 <ul>
   <table border=5>
     <tr>

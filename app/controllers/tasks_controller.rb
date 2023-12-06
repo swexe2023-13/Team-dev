@@ -1,8 +1,14 @@
 class TasksController < ApplicationController
+  
     def index
-      @tasks = Task.all.order(Arel.sql("CASE status WHEN 'Not Start' THEN 1 WHEN 'In Progress' THEN 2 WHEN 'Completion' THEN 3 END"), date: :asc)
-      @task = Task.new
+      if current_user.nil?
+        redirect_to top_main_path
+      else
+        @tasks = current_user.tasks.order(Arel.sql("CASE status WHEN 'Not Start' THEN 1 WHEN 'In Progress' THEN 2 WHEN 'Completion' THEN 3 END"), date: :asc)
+        @task = Task.new
+      end
     end
+
     def new
       @task = Task.new
     end

@@ -1,18 +1,19 @@
-
 <div class="example">
-    
-        <p class="solid"><%= @task.title %></p>
-        <p class="solid"><%= @task.date %></p>
+        
+    <p class="solid">Title:<%= @task.title %></p>
+    <p class="solid">Expire:<%= @task.date %></p>
    
 </div>
+
 <p class="solid">
-<%= @task.memo %>
+    Memo:<%= @task.memo %>
 </p>
+
 <div class="example">
-<%= link_to 'Return', :back %>
-<% if current_user %>
-    <%= button_to 'delete', task_path(@task), method: :delete %>
-    <%= link_to 'edit', edit_task_path(@task) %>
-<% end %>
+    <%= link_to 'Return', :back %>
+    <% if current_user %>
+        <%= button_to 'delete', task_path(@task), method: :delete %>
+        <%= link_to 'edit', edit_task_path(@task) %>
+    <% end %>
 </div>
 

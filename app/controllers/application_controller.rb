@@ -6,4 +6,6 @@ class ApplicationController < ActionController::Base
             User.find_by(uid: session[:login_uid])
         end
     end
+    
+    
 end

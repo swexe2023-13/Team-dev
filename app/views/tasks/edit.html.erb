@@ -1,4 +1,5 @@
 <%= form_for @task , url: {action: :update} do |f| %>
+<div class="inner">
     <%= f.label :title, 'Title' %>
     <%= f.text_field :title %>
     <%= f.label :date, 'Expire', class: 'controll-label' %>
@@ -7,4 +8,5 @@
     <%= f.text_field :memo ,size:"40" %></p>
     <%= f.select :status, ['未着手', '進行中', '完了'], selected: @task.status %>
     <%= f.submit 'Add' %>
+</div>
 <% end %>

@@ -37,3 +37,6 @@ table {
       display: flex;
     justify-content:space-around;
 }
+.inner{
+  text-align: center;
+}

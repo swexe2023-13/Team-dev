@@ -6,7 +6,7 @@
     <%= f.datetime_field :date, class: 'form-controll' %>
     <p class><%= f.label :memo, 'Memo' %>
     <%= f.text_field :memo ,size:"40" %></p>
-    <%= f.select :status, ['未着手', '進行中', '完了'], selected: @task.status %>
+    <%= f.select :status, ['Not Start', 'In Progress', 'Completion'], selected: @task.status %>
     <%= f.submit 'Add' %>
 </div>
 <% end %>

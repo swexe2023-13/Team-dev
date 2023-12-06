@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
     def index
       @tasks = Task.all.order(Arel.sql("CASE status WHEN 'Not Start' THEN 1 WHEN 'In Progress' THEN 2 WHEN 'Completion' THEN 3 END"), date: :asc)
+      @task = Task.new
     end
     def new
       @task = Task.new

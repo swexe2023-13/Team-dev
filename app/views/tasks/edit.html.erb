@@ -1,4 +1,5 @@
 <%= form_for @task , url: {action: :update} do |f| %>
+ <div class="example"><h4>Form</h4>  <%= f.submit 'Add' %></div>
 <div class="inner">
     <%= f.label :title, 'Title' %>
     <%= f.text_field :title %>
@@ -7,6 +8,6 @@
     <p class><%= f.label :memo, 'Memo' %>
     <%= f.text_field :memo ,size:"40" %></p>
     <%= f.select :status, ['Not Start', 'In Progress', 'Completion'], selected: @task.status %>
-    <%= f.submit 'Add' %>
+   
 </div>
 <% end %>

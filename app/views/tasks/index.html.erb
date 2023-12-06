@@ -8,18 +8,20 @@
 
 
 <%= form_for @task , url: {action: :create} do |f| %>
-<div class="inner">
+
   <% if current_user %>
 <ul>
+  <div class="example"><h4>Form</h4> <%= f.submit 'New To-Do' %></div>
+  <div class="inner">
     <%= f.label :title, 'Title' %>
     <%= f.text_field :title %>
     <%= f.label :date, 'Expire', class: 'controll-label' %>
     <%= f.datetime_field :date, class: 'form-controll' %>
     <p><%= f.label :memo, 'Memo' %>
     <%= f.text_field :memo ,size:"40" %></p>
-    <%= f.submit 'New To-Do' %>
+  </div>
 </ul>
-</div>
+
 <% end %>
 
 <%end%>

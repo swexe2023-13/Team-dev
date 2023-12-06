@@ -37,10 +37,11 @@
     </tr>
     <% @tasks.each do |task| %>
       <tr>
+        <% if current_user %>
         <th><%= link_to task.title, task_path(task) %></th>
         <th><%= task.date %></th>
         <th><%= task.status %></th>
-        <% if current_user %>
+        
           <th><%= button_to 'delete', task_path(task), method: :delete %></th>
         <% end %>
       </tr>

@@ -5,13 +5,11 @@
   <table border=5>
     <tr>
       <th>task-title</th>
-      <th>todo</th>
       <th>date</th>
     </tr>
     <% @tasks.each do |task| %>
       <tr>
         <th><%= link_to task.title, task_path(task) %></th>
-        <th><%= task.todo %></th>
         <th><%= task.date %></th>
         <th><%= task.status %></th>
         <% if current_user %>

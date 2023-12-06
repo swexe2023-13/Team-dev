@@ -1,8 +1,6 @@
 <%= form_for @task , url: {action: :create} do |f| %>
     <%= f.label :title, 'Title' %>
     <%= f.text_field :title %>
-    <%= f.label :todo, 'Todo' %>
-    <%= f.text_field :todo %>
     <%= f.label :date, 'Expire', class: 'controll-label' %>
     <%= f.datetime_field :date, class: 'form-controll' %>
     <p class><%= f.label :memo, 'Memo' %>

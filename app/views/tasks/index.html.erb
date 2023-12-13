@@ -49,6 +49,7 @@
 
 
 <ul>
+  <div class="example">
  <% if current_user %>
     <%= link_to 'Sign Out', top_logout_path %>
     <%= button_to 'Account Delete', user_path(current_user), method: :delete, data: { confirm: '本当に削除しますか？' } %>
@@ -56,4 +57,5 @@
   <% else %>
     <%= link_to 'Sign In', top_main_path %>
   <% end %>
+  </div>
 </ul>

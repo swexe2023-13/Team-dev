@@ -51,7 +51,7 @@
 <p class="solid">
  <% if current_user %>
     <%= link_to 'Sign Out', top_logout_path %>
-    <%= button_to 'Delete', user_path(current_user), method: :delete, data: { confirm: '本当に削除しますか？' } %>
+    <%= button_to 'Account Delete', user_path(current_user), method: :delete, data: { confirm: '本当に削除しますか？' } %>
     <%= link_to 'Pass Change', edit_user_path(current_user)%>
   <% else %>
     <%= link_to 'Sign In', top_main_path %>

@@ -7,10 +7,9 @@
    <table border=5>
   <% @users.each do |user| %>
  <tr>
-  
-   
+  <th>Uid</th>
     <th><%= user.uid %></th>
-    <th><%= button_to 'delete', user_path(user), method: :delete, data: { confirm: '本当に削除しますか？' } %></th>
+
   
   </tr>
 <% end %>

@@ -6,5 +6,10 @@ class User < ApplicationRecord
     self.password_digest = BCrypt::Password.create(val)
   end
   @password = val
-end
+  end
+  
+  def activated?
+    self.activated
+  end
+  
 end

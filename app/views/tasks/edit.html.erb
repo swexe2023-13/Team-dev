@@ -7,8 +7,8 @@
     <%= f.text_field :title %>
     <%= f.label :date, 'Expire', class: 'controll-label' %>
     <%= f.datetime_field :date, class: 'form-controll' %>
-    <p class><%= f.label :memo, 'Memo' %>
-    <%= f.text_field :memo ,size:"40" %></p>
+    <p class><%= f.label :memo, 'Memo' %></p>
+    <%= f.text_area :memo ,style: "width:40%", rows: "3"%>
     <%= f.select :status, ['Not Start', 'In Progress', 'Completion'], selected: @task.status %>
 </div>
 

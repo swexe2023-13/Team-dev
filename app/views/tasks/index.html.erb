@@ -30,10 +30,10 @@
 <ul>
   <table border=5>
     <tr>
-      <th>task-title</th>
-      <th>date</th>
-      <th>status</th>
-      <th>delete</th>
+      <th>Title</th>
+      <th>Expire</th>
+      <th>Status</th>
+      <th>Delete</th>
     </tr>
     <% @tasks.each do |task| %>
       <tr>
@@ -42,7 +42,7 @@
         <th><%= task.date %></th>
         <th><%= task.status %></th>
         
-          <th><%= button_to 'delete', task_path(task), method: :delete %></th>
+          <th><%= button_to 'Delete', task_path(task), method: :delete %></th>
         <% end %>
       </tr>
     <% end %>

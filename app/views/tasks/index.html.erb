@@ -13,7 +13,7 @@
   <div class="inner">
     <%= f.label :title, 'Title' %>
     <%= f.text_field :title %>
-    <%= f.label :date, 'Expire', class: 'controll-label' %>
+    <%= f.label :date, 'Deadline', class: 'controll-label' %>
     <%= f.datetime_field :date, class: 'form-controll' %>
     <p><%= f.label :memo, 'Memo' %></p>
     <%= f.text_area :memo ,style: "width:40%", rows: "3" %>
@@ -29,7 +29,7 @@
   <table border=5>
     <tr>
       <th>Title</th>
-      <th>Expire</th>
+      <th>Deadline</th>
       <th>Status</th>
       <th>Delete</th>
     </tr>
@@ -51,7 +51,7 @@
 <ul>
  <% if current_user %>
     <%= link_to 'Sign Out', top_logout_path %>
-    <%= button_to 'Delete', user_path(current_user), method: :delete, data: { confirm: '本当に削除しますか？' } %>
+    <%= button_to 'Account Delete', user_path(current_user), method: :delete, data: { confirm: '本当に削除しますか？' } %>
     <%= link_to 'Pass Change', edit_user_path(current_user)%>
   <% else %>
     <%= link_to 'Sign In', top_main_path %>

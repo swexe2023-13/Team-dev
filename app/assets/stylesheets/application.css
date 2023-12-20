@@ -17,11 +17,13 @@ ul{
 padding: 1em 1em 1em 3em; 
 border: solid 3px ;
  text-align: center;
+
 }
 .solid{
     padding: 1em 1em 1em 3em; 
     border: solid 3px ;
     text-align: center;
+   
     
 }
 /*.example {*/
@@ -37,15 +39,18 @@ table {
 .example{
       display: flex;
     justify-content:space-around;
+   
 }
 .inner{
   text-align: center;
+ 
 }
 .child {
  float: left;
+
 }
 body{
  background:radial-gradient(circle, rgba(0,144,255,1) 0%, rgba(255,255,255,1) 37%, rgba(134,202,255,1) 63%);
 	height: 1000px;
-
+ font-size: 2rem;
 }
